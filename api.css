@@ -1,0 +1,15 @@
+table{
+    width: 120vh;
+    background-color: beige;
+    border-radius: 0px;
+    border: 1;
+    align-items: center;
+}
+
+body{
+
+}
+
+form{
+    background-color:azure;
+}
