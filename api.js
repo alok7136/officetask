@@ -1,5 +1,3 @@
-const { default: Item } = require("antd/lib/list/Item");
-
 let arr = [];
 var url = "https://jsonplaceholder.typicode.com/todos";
 
@@ -81,59 +79,22 @@ function validate() {
   return isValid;
 }
 
-function Editrow() {
-  if (validate()) {
-    alert("Data has been inserted !!!");
-      selectedRow = td.parentElement.parentElement;
-      document.getElementById("id").value = selectedRow.cells[0].innerHTML;
-      document.getElementById("title").value = selectedRow.cells[1].innerHTML;
-      document.getElementById("completed").value = selectedRow.cells[2].innerHTML;
-    arr.filter((Item)=>{
+// function editrow() {
+//       selectedRow = td.parentElement.parentElement;
+//       document.getElementById("id").value = selectedRow.cells[0].innerHTML;
+//       document.getElementById("title").value = selectedRow.cells[1].innerHTML;
+//       document.getElementById("completed").value = selectedRow.cells[2].innerHTML;
       
-    });
-    console.log(arr);
-    display = `<tr><td>Id</td><td>title</td><td>status</td><td>RemoveItem</td><td>EditItem</td></tr>`;
-    arr.map((element) => {
-      display += `<tr>
-            <td>${element.id}</td>
-            <td>${element.title}</td>
-            <td>${element.completed}</td>
-            <td><button onclick="ondelete(${element.id})">Delete</button></td>
-            <td><button>Edit</button></td>
-        </tr>`;
-    });
-    document.getElementById("display").innerHTML = display;
-    document.getElementsByTagName(del).innerHTML = del;
-  } else {
-    alert("please fill all field");
-  }
-}
-
-
-
-function edit(resp) {
-  
-  let arr2 = arr.filter((element) => {
-    return element.id != resp;
-  });
-  arr = arr2;
-  display = `<tr><td>Id</td><td>title</td><td>status</td><td>RemoveItem</td><td>EditItem</td></tr>`;
-  arr1.map((element) => {
-    display += `<tr>
-              <td>${element.id}</td>
-              <td>${element.title}</td>
-              <td>${element.completed}</td>
-              <td><button onclick="ondelete(${element.id})">Delete</button></td>
-              <td><button onclick="edit(${element.id})">Edit</button></td>
-          </tr>`;
-  });
-  document.getElementById("display").innerHTML = display;
-}
-
-// function onEdit() {
-//         selectedRow = td.parentElement.parentElement;
-//         document.getElementById("fullName").value = selectedRow.cells[0].innerHTML;
-//         document.getElementById("empCode").value = selectedRow.cells[1].innerHTML;
-//         document.getElementById("salary").value = selectedRow.cells[2].innerHTML;
-//         document.getElementById("city").value = selectedRow.cells[3].innerHTML;
-//     }
+//     display = `<tr><td>Id</td><td>title</td><td>status</td><td>RemoveItem</td><td>EditItem</td></tr>`;
+//     arr.map((element) => {
+//       display += `<tr>
+//             <td>${element.id}</td>
+//             <td>${element.title}</td>
+//             <td>${element.completed}</td>
+//             <td><button onclick="ondelete(${element.id})">Delete</button></td>
+//             <td><button onclick="editrow()">Edit</button></td>
+//         </tr>`;
+//     });
+//     document.getElementById("display").innerHTML = display;
+//     document.getElementsByTagName(del).innerHTML = del;
+//   } 
